@@ -1,0 +1,16 @@
+[project]
+name = "agent-tool-mcp-server"
+version = "0.1.0"
+description = "Standalone MCP tool server for AI agents: one-line tool registry, manifest discovery, Tool._meta metadata and a Redis-backed async job queue"
+authors = [
+    { name = "Galaletsang Modimola" }
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "mcp[cli]>=2.0,<3",
+    "pydantic>=2",
+    "python-dotenv>=1.0.0",
+    "redis>=5.2.1",
+    "uvicorn>=0.30",
+]

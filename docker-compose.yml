@@ -1,0 +1,16 @@
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  mcp-server:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      REDIS_HOST: redis
+      MCP_SERVER_URL: http://localhost:8000
+      DEMO_REPORT_SECONDS: ${DEMO_REPORT_SECONDS:-15}
+    depends_on:
+      - redis
